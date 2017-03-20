@@ -6,10 +6,10 @@
  */
 function authorizeCallback() {
   var queryParams = parseParams(window.location.search.substring(1));
-  if (!queryParams.orig_url || queryParams.orig_url == 'post_message') {
+  if (!queryParams.state || queryParams.state == 'post_message') {
     window.opener.postMessage(queryParams.code, '*');
     window.close();
-  } else if (queryParams.orig_url == 'urn:ietf:wg:oauth:2.0:oob') {
+  } else if (queryParams.state == 'urn:ietf:wg:oauth:2.0:oob') {
     // Manual copy/paste
     document.body.innerHTML = 'Please copy this code, ' +
         'switch to your application and paste it there:<br>' +
@@ -17,7 +17,7 @@ function authorizeCallback() {
         queryParams.code + '" style="width:300px" ' +
         'onclick="this.focus();this.select();">';
   } else {
-    var callbackUrl = queryParams.orig_url + '?code=' + queryParams.code;
+    var callbackUrl = queryParams.state + '?code=' + queryParams.code;
     window.location.href = callbackUrl;
   }
 }

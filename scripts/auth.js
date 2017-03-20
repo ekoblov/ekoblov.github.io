@@ -28,7 +28,7 @@ function authorize() {
 
   var callbackUrl = location.origin + '/callback.html';
   if (params.redirect_url) {
-    new_params.orig_url = params.redirect_url;
+    new_params.state = params.redirect_url;
   }
   new_params.redirect_uri = callbackUrl;
 
