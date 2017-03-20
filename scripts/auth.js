@@ -19,7 +19,7 @@ function authorize() {
   }
   var new_params = {
     client_id: params.client_id,
-    scope: params:scope,
+    scope: params.scope,
     response_type: 'code',
     access_type: 'offline',
     immediate: 'false',
