@@ -26,7 +26,7 @@ function authorize() {
     approval_prompt: 'force'
   };
 
-  var callbackUrl = location.origin + '/callback';
+  var callbackUrl = location.origin + '/callback.html';
   if (params.redirect_url) {
     callbackUrl = callbackUrl + '?orig_url=' + params.redirect_url;
   }
