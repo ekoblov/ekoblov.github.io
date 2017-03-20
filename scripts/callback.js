@@ -21,5 +21,3 @@ function authorizeCallback() {
     window.location.href = callbackUrl;
   }
 }
-
-authorizeCallback();
